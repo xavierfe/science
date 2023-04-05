@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <style>
+      body {
+        background-color: #ffffff; /* white color */
+        margin: 0; /* remove default margin */
+        padding: 0; /* remove default padding */
+      }
+      .header {
+        height: 50px; /* set the height of the header */
+        text-align: center; /* center the content horizontally */
+      }
+      .navbar {
+        background-color: #ffffff; /* white color for navbar */
+        overflow: hidden; /* hide overflowing content */
+        text-align: center; /* center the links horizontally */
+      }
+      .navbar a {
+        display: inline-block; /* make links display as block elements */
+        color: #000000; /* black text color for links */
+        text-align: center; /* center the text within the links */
+        padding: 14px 16px; /* add padding around the links */
+        text-decoration: none; /* remove underline from links */
+      }
+      .navbar a:not(:last-child)::after {
+        content: "|"; /* add a separator after each link, except for the last one */
+        margin: 0 10px; /* add margin around the separator */
+        color: #000000; /* black color for the separator */
+      }
+      .navbar a:hover {
+        background-color: #dddddd; /* light gray color when hovering over links */
+        color: #000000; /* black text color when hovering over links */
+      }
+      .content {
+        max-width: 800px; /* limit the width of the content */
+        margin: auto; /* center the content horizontally */
+        padding: 20px; /* add padding around the content */
+      }
+      .container {
+        max-width: 1200px; /* set the maximum width of the container */
+        margin: 0 auto; /* center the container horizontally */
+        padding: 0 20px; /* add padding to the sides of the container */
+      }
+      .image {
+        float: right; /* float the image to the right */
+        width: 40%; /* set the width of the image */
+        margin: 0 0 20px 20px; /* add margins to the image */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <!-- your header content goes here -->
+    </div>
+    <div class="navbar">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+      <a href="#">Link 4</a>
+      <a href="#">Link 5</a>
+      <a href="#">Link 6</a>
+    </div>
+    <div class="container">
+      <img src="your-image.jpg" alt="Your Image" class="image">
+      <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is a sample text body. You can add your own content here.</p>
+      </div>
+    </div>
+  </body>
+</html>
