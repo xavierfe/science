@@ -136,6 +136,7 @@
   <button class="next-btn">&gt;</button>
 </div>
 
+<script>
 const gallery = document.querySelector('.gallery');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
@@ -181,3 +182,4 @@ window.addEventListener('resize', () => {
   scrollAmount = prevScrollAmount;
   gallery.style.transform = `translateX(-${scrollAmount}px)`;
 });
+</script>
