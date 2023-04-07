@@ -1,0 +1,87 @@
+.gallery-container {
+  overflow: hidden;
+  position: relative;
+}
+.gallery {
+  white-space: nowrap;
+  font-size: 0;
+  transition: transform 0.3s ease-in-out;
+}
+.gallery img {
+  display: inline-block;
+  width: 300px;
+  height: auto;
+}
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+.prev-btn {
+  left: 0;
+}
+.next-btn {
+  right: 0;
+}
+
+<div class="gallery-container">
+  <div class="gallery">
+    <img src="image1.jpg">
+    <img src="image2.jpg">
+    <img src="image3.jpg">
+    <img src="image4.jpg">
+  </div>
+  <button class="prev-btn">&lt;</button>
+  <button class="next-btn">&gt;</button>
+</div>
+
+const gallery = document.querySelector('.gallery');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+let scrollAmount = 0;
+let prevScrollAmount = 0;
+let isScrolling = false;
+
+function scrollGallery(direction) {
+  if (!isScrolling) {
+    isScrolling = true;
+    prevScrollAmount = scrollAmount;
+    if (direction === 'prev') {
+      scrollAmount -= gallery.offsetWidth;
+      if (scrollAmount < 0) {
+        scrollAmount = 0;
+      }
+    } else if (direction === 'next') {
+      scrollAmount += gallery.offsetWidth;
+      if (scrollAmount > gallery.scrollWidth - gallery.offsetWidth) {
+        scrollAmount = gallery.scrollWidth - gallery.offsetWidth;
+      }
+    }
+    gallery.style.transform = `translateX(-${scrollAmount}px)`;
+    setTimeout(() => {
+      isScrolling = false;
+    }, 300);
+  }
+}
+
+prevBtn.addEventListener('click', () => {
+  scrollGallery('prev');
+});
+
+nextBtn.addEventListener('click', () => {
+  scrollGallery('next');
+});
+
+gallery.addEventListener('click', () => {
+  scrollGallery('next');
+});
+
+window.addEventListener('resize', () => {
+  scrollAmount = prevScrollAmount;
+  gallery.style.transform = `translateX(-${scrollAmount}px)`;
+});
