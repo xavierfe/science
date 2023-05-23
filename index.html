@@ -53,13 +53,35 @@
       img {
         display: block; /* make image display as a block element */
         margin: auto; /* center the image horizontally */
-        max-width: 100%; /* limit the image size to the width of its container */
+        max-width: 70%; /* limit the image size to the width of its container */
       }
       .container {
         max-width: 1200px; /* set the maximum width of the container */
         margin: 0 auto; /* center the container horizontally */
         padding: 0 20px; /* add padding to the sides of the container */
       }
+      .image-container {
+        position: relative;
+        display: inline-block;
+      }
+      .caption {
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	background-color: rgba(0, 0, 0, 0.4); /* Adjust the alpha value (0.4) to change transparency */
+  	color: #ffffff;
+  	padding: 10px;
+  	opacity: 0;
+  	transition: opacity 0.3s;
+	font-size: 20px; /* Increase the font size */
+	font-family: Open Sans, Verdana, Arial, sans-serif; /* Change the font family */
+	}
+
+	.image-container:hover .caption {
+	  opacity: 1;
+	}
+
     </style>
   </head>
   <body>
@@ -74,10 +96,13 @@
       <a href="https://xavierfe.github.io/science/dei.html">EQUITY IN SCIENCE</a>
       <a href="https://xavierfe.github.io/science/cv.html">CV</a>
     </div>
+	    <br>
     <div class="container">
-      <div class="content">
-        <img src="https://xavierfe.github.io/science/FXF_3944-Edit.jpg" alt="CTD">
-        <!-- your website content goes here -->
+     <div class="image-container"> 
+       <img src="https://xavierfe.github.io/science/FXF_3944-Edit.jpg" alt="Image">
+  <div class="caption"><center>A microbial ecologist studying the networks of phytoplankton, heterotrophic bacteria, and their metabolites that play a central role in the cycling of carbon and other key elements in the marine environment.</center></div>
+</div>
+
       </div>
     </div>
   </body>
