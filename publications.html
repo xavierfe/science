@@ -55,6 +55,20 @@
         margin: 0 auto; /* center the container horizontally */
         padding: 0 20px; /* add padding to the sides of the container */
       }
+	    }
+  .banner {
+    height: 80px; /* set the height of the banner image */
+    display: flex; /* use flexbox for centering */
+    align-items: center; /* center vertically */
+    justify-content: center; /* center horizontally */
+    overflow: hidden; /* hide overflowing content */
+  }
+
+  .banner img {
+    width: 100%; /* maintain the image's aspect ratio */
+    height: 100%; /* set the height of the image to fill the banner */
+    object-fit: cover; /* crop the image to fit the banner */
+  }
     </style>
   </head>
   <body>
@@ -71,6 +85,9 @@
     </div>
     <div class="container">
       <div class="content">
+	      <div class="banner">
+          <img src="https://xavierfe.github.io/frankxavier/parguera.png" alt="Banner Image">
+        </div>
           <style>
     p {
       margin-bottom: 20px; /* add 20px margin to the bottom of each paragraph */
