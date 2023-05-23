@@ -75,17 +75,29 @@
        width: 800px;
        height: auto;
       }
-      .prev-btn,
-      .next-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        font-size: 2rem;
-	color: lightgray;
-      }
+      	.prev-btn,
+	.next-btn {
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  background-color: transparent;
+	  border: none;
+	  cursor: pointer;
+	  font-size: 2rem;
+	  color: lightgray;
+	  width: 40px; /* Add a width for the buttons */
+	  height: 40px; /* Add a height for the buttons */
+	  border-radius: 50%; /* Apply border-radius to create a circle shape */
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+
+.prev-btn span,
+.next-btn span {
+  line-height: 1; /* Adjust the line-height to center the arrow inside the circle */
+}
+
         .prev-btn {
         left: 0;
       }
